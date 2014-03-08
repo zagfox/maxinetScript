@@ -26,7 +26,8 @@ print "waiting 3 seconds for routing algorithms on the controller to converge"
 time.sleep(3)
 
 print "Start test here"
-print exp.get_node("h1").cmd("ping -c 5 10.0.0.3")
+print exp.get_node("h1").cmd("ping -c 15 10.0.0.2")
+"""
 time.sleep(2)
 print exp.get_node("h3").cmd("iperf -s &")
 print exp.get_node("h1").cmd("iperf -M 1400 -t 10 -c 10.0.0.3 > ~/results/iperf_h1.txt &")
@@ -34,5 +35,6 @@ print exp.get_node("h2").cmd("iperf -M 1400 -t 10 -c 10.0.0.3 > ~/results/iperf_
 
 print "wait for hosts to complete iperf"
 time.sleep(15)
+"""
 
 exp.stop()
